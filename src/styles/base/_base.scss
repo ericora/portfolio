@@ -1,0 +1,60 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+//remove default anchor tag styling
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// remove default list styling
+ul,
+li {
+  list-style: none;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body {
+}
+
+textarea,
+select,
+input,
+button {
+  outline: none;
+}
+
+image {
+}
+
+select::-ms-expand {
+  display: none;
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: "";
+}
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+select {
+  background-color: transparent;
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: "";
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}

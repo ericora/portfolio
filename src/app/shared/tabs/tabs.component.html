@@ -1,0 +1,7 @@
+<div class="tabs">
+    <div class="tab" *ngFor="let tab of tabs">
+        <button #tab_btn class="tab_btn" value="tab?.value" (click)="selectTab(tab?.value)"
+            (mouseenter)="enterTab(tab?.value)">{{tab?.title}}</button>
+        <div class="tab_selected" *ngIf="tagShowing === tab?.value"></div>
+    </div>
+</div>

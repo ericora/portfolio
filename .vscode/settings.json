@@ -1,0 +1,7 @@
+{
+  "html.format.contentUnformatted": "pre",
+  "html.autoClosingTags": true,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true
+}
