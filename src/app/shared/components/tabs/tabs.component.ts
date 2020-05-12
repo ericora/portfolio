@@ -26,13 +26,12 @@ export class TabsComponent implements OnInit, OnChanges {
   @ViewChildren('tab_btn') tabBtns!: QueryList<ElementRef>;
   constructor(private elemRef: ElementRef, private render: Renderer2) {}
 
-  ngOnInit(): void {
-    console.log('here');
-  }
+  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.selectedTab) {
       this.tagShowing = this.selectedTab;
+      console.log(this.selectedTab);
     }
   }
 
@@ -46,7 +45,7 @@ export class TabsComponent implements OnInit, OnChanges {
     this.tabBtns.toArray().forEach((elRef) => {
       const element = elRef.nativeElement;
       if (event.target !== element) {
-        this.render.setStyle(element, 'color', 'lightgray');
+        this.render.setStyle(element, 'color', 'gray');
       } else {
         this.render.setStyle(element, 'color', '#000');
       }

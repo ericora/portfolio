@@ -3,10 +3,11 @@
     <div class="main-header__nav--icon">
       <i class="fab fa-angular"></i>
     </div>
-    <app-tabs [tabs]="links"></app-tabs>
+    <app-tabs [tabs]="links" [selectedTab]="nav" (pickTab)="updateURL($event)"></app-tabs>
   </div>
   <div class="main-header__social">
     <i class="fab fa-github"></i>
+    <i class="fab fa-linkedin"></i>
     <div class="main-header__social--pic">
       <img src="../../../assets/profile-pic/11589217482_.pic.jpg" alt="" />
     </div>
