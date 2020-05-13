@@ -1,0 +1,31 @@
+@import './src/styles/abstract/variables';
+
+@mixin respond-xs {
+  @media only screen and (max-width: $break-xs) {
+    @content;
+  }
+}
+
+@mixin respond-s {
+  @media screen and (max-width: $break-s) {
+    @content;
+  }
+}
+
+@mixin respond-md {
+  @media screen and (max-width: $break-md) {
+    @content;
+  }
+}
+
+@mixin respond-lg {
+  @media screen and (max-width: $break-lg) {
+    @content;
+  }
+}
+
+@mixin respond-xl {
+  @media screen and (min-width: $break-lg) {
+    @content;
+  }
+}

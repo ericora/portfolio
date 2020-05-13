@@ -1,1 +1,58 @@
-<p>home works!</p>
+<div class="home flex-row flex-row-center">
+  <div class="home-background">
+    <div class="home-background--top"></div>
+    <div class="home-background--mid"></div>
+    <div class="home-background--bottom"></div>
+  </div>
+  <div class="home-body flex-column">
+    <div class="home-body--title">
+      <span>
+        Who am I?<br />Full Stack Developer who is passionate about Angular.
+      </span>
+    </div>
+    <div class="home-body__content-box round-shadow">
+      <div class="home-body__content-box--title flex-row flex-row-center">
+        <span>What do I know?</span>
+      </div>
+      <div class="home-body__content-box__skill-win" #skillWin>
+        <i
+          class="fas fa-chevron-circle-left skill-carousel-icon skill-carousel-left"
+          (click)="prevSkills()"
+        ></i>
+        <i
+          class="fas fa-chevron-circle-right skill-carousel-icon skill-carousel-right"
+          (click)="nextSkills()"
+        ></i>
+        <div
+          class="home-body__content-box__skill-win-box flex-row flex-row-btw"
+          #skillBody
+        >
+          <div class="home-body__content-box__skills">
+            <div
+              class="home-body__content-box__skills--title flex-row flex-row-center"
+            >
+              Front End Skills
+            </div>
+            <div class="home-body__content-box__skills--body">
+              <div class="text-round" *ngFor="let front of frontEnds">
+                {{ front }}
+              </div>
+            </div>
+          </div>
+          <div class="home-body__content-box__skills">
+            <div
+              class="home-body__content-box__skills--title flex-row flex-row-center"
+            >
+              Back End Skills
+            </div>
+            <div class="home-body__content-box__skills--body">
+              <div class="text-round" *ngFor="let back of backEnds">
+                {{ back }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

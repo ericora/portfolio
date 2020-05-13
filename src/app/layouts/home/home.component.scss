@@ -1,0 +1,109 @@
+@import './src/styles/abstract/variables';
+@import './src/styles/abstract/mixins';
+.home {
+  position: relative;
+  .home-background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    &--top {
+      width: 100vw;
+      height: 50rem;
+      background-color: $color_home_top;
+      border-radius: 0 0 200rem 0/ 0 0 30rem 0;
+      box-sizing: border-box;
+    }
+
+    &--mid {
+      width: 100vw;
+      height: 15rem;
+      background-color: #ffffff;
+    }
+
+    &--bottom {
+      width: 100vw;
+      height: 100vh;
+      background-color: $color_home_bottom;
+      border-radius: 200rem 0 0 0/ 30rem 0 0 0;
+      box-sizing: border-box;
+    }
+  }
+
+  &-body {
+    width: 90%;
+    max-width: 128rem;
+
+    &--title {
+      margin-top: 15rem;
+      margin-bottom: 5rem;
+      font-size: 5.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      width: 50%;
+      @include respond-md {
+        align-self: center;
+        font-size: 3.8rem;
+        text-align: center;
+        margin-top: 5rem;
+        width: 80%;
+      }
+    }
+
+    &__content-box {
+      background-color: #ffffff;
+      padding: 2rem 2%;
+      &--title {
+        font-size: 3.8rem;
+        margin: 2rem 0;
+      }
+      &__skill-win {
+        position: relative;
+        overflow: hidden;
+        &-box {
+          @include respond-s {
+            flex: auto;
+            width: 200%;
+          }
+        }
+      }
+      &__skills {
+        flex: 1;
+
+        &--title {
+          margin: 1rem 0;
+          font-size: 2.5rem;
+        }
+        &--body {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}
+
+.skill-carousel {
+  &-icon {
+    position: absolute;
+    display: none;
+    top: 1rem;
+    font-size: 3rem;
+    color: rgba(46, 45, 45, 0.5);
+    cursor: pointer;
+    z-index: 1;
+    &:hover {
+      color: rgba(46, 45, 45, 1);
+    }
+
+    @include respond-s {
+      display: initial;
+    }
+  }
+  &-left {
+    left: 0;
+  }
+  &-right {
+    right: 0;
+  }
+}

@@ -1,6 +1,12 @@
 import { PathService } from './../../services/path.service';
 import { Router, NavigationEnd } from '@angular/router';
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  OnDestroy,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -18,7 +24,11 @@ export class MainHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   ];
   nav: string;
   routerSub$: Subscription;
-  constructor(private router: Router, private pathServ: PathService) {}
+  constructor(
+    private router: Router,
+    private pathServ: PathService,
+    private cdRef: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {}
 
@@ -38,6 +48,7 @@ export class MainHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
         console.log(this.nav);
       }
     });
+    this.cdRef.detectChanges();
   }
 
   ngOnDestroy(): void {
