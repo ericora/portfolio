@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "career-portfolio-7d82a"
+  },
+  "targets": {
+    "career-portfolio-7d82a": {
+      "hosting": {
+        "career-portfolio": [
+          "career-portfolio-7d82a"
+        ]
+      }
+    }
+  }
+}
