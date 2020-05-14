@@ -1,4 +1,5 @@
 @import './src/styles/abstract/variables';
+@import './src/styles/abstract/mixins';
 .experience {
   width: 100%;
   min-height: 150vh;
@@ -28,6 +29,99 @@
       background-color: $color_exper_bottom;
       border-radius: 200rem 0 0 0/ 30rem 0 0 0;
       box-sizing: border-box;
+    }
+  }
+  &-body {
+    width: 90%;
+    max-width: 128rem;
+    &--title {
+      margin-top: 15rem;
+      margin-bottom: 5rem;
+      font-size: 5.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      width: 50%;
+      @include respond-md {
+        align-self: center;
+        font-size: 3.8rem;
+        text-align: center;
+        margin-top: 5rem;
+        width: 80%;
+      }
+    }
+    &--box {
+      background-color: #ffffff;
+      padding: 2rem 2%;
+      margin-bottom: 5rem;
+      &--title {
+        font-size: 3.8rem;
+        margin: 2rem 0;
+      }
+      &--container {
+        &--career {
+          width: 48%;
+          @include respond-s {
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+
+          &--title {
+            font-size: 2rem;
+            line-height: 3rem;
+            @include respond-s {
+              text-align: center;
+            }
+          }
+
+          &--date {
+            font-size: 1.8rem;
+            margin: 1rem 0;
+            color: $color_text_light;
+            @include respond-s {
+              text-align: center;
+            }
+          }
+
+          &--detail {
+            font-size: 1.5rem;
+            color: $color_text_light;
+            line-height: 3rem;
+          }
+        }
+        &--edu {
+          width: 48%;
+          @include respond-s {
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+
+          &--title {
+            font-size: 2rem;
+            line-height: 3rem;
+            @include respond-s {
+              text-align: center;
+            }
+          }
+
+          &--date {
+            font-size: 1.8rem;
+            margin: 1rem 0;
+            color: $color_text_light;
+            @include respond-s {
+              text-align: center;
+            }
+          }
+
+          &--name {
+            font-size: 1.5rem;
+            color: $color_text_light;
+            line-height: 3rem;
+            @include respond-s {
+              text-align: center;
+            }
+          }
+        }
+      }
     }
   }
 }
