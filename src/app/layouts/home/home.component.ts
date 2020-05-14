@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
     'Mongoose',
     'Express',
     'RESTful API',
+    'Firebase',
   ];
   constructor() {}
 
@@ -45,7 +46,7 @@ export class HomeComponent implements OnInit {
   prevSkills() {
     let start = this.skillsOnIndex;
     if (this.skillsOnIndex === 0) {
-      start = 1.5;
+      start = 2;
       this.skillsOnIndex = 1;
     } else {
       this.skillsOnIndex--;
@@ -57,7 +58,7 @@ export class HomeComponent implements OnInit {
   nextSkills() {
     let start = this.skillsOnIndex;
     if (this.skillsOnIndex === 1) {
-      start = -0.5;
+      start = -1;
       this.skillsOnIndex = 0;
     } else {
       this.skillsOnIndex++;

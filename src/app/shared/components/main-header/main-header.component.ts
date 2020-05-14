@@ -45,7 +45,6 @@ export class MainHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     this.routerSub$ = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.nav = this.pathServ.getCurrentPage();
-        console.log(this.nav);
       }
     });
     this.cdRef.detectChanges();

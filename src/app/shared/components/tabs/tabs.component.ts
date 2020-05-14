@@ -31,7 +31,6 @@ export class TabsComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.selectedTab) {
       this.tagShowing = this.selectedTab;
-      console.log(this.selectedTab);
     }
   }
 
