@@ -1,0 +1,50 @@
+@import './src/styles/abstract/variables';
+@import './src/styles/abstract/mixins';
+:host {
+  position: relative;
+}
+
+.drop-select {
+  cursor: pointer;
+  display: none;
+  //   position: relative;
+  @include respond-s {
+    display: block;
+  }
+  & :hover {
+    color: #ffffff;
+    background-color: $color_orage_round;
+  }
+  &__show {
+    text-transform: capitalize;
+  }
+  &__box {
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 4rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 0.1rem solid $color_line;
+    background-color: #ffffff;
+  }
+  &__option {
+    width: 100%;
+    text-align: center;
+    margin: 0.1rem 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover {
+      color: #ffffff;
+      background-color: $color_orage_round;
+    }
+  }
+}

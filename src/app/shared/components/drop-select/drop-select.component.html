@@ -1,0 +1,15 @@
+<div class="drop-select">
+  <div class="drop-select__show square_box-3 flex-row" (click)="toggleDrop()">
+    {{ optionSelected }}
+  </div>
+</div>
+
+<div class="drop-select__box" *ngIf="isOpen" #dropBox>
+  <div
+    class="drop-select__option"
+    *ngFor="let option of options"
+    (click)="selectOption.next(option?.value)"
+  >
+    {{ option?.title }}
+  </div>
+</div>

@@ -3,7 +3,20 @@
     <div class="main-header__nav--icon">
       <i class="fab fa-angular"></i>
     </div>
-    <app-tabs [tabs]="links" [selectedTab]="nav" (pickTab)="updateURL($event)"></app-tabs>
+    <div class="main-header__nav--drop">
+      <drop-select
+        [optionSelected]="nav"
+        [options]="links"
+        (selectOption)="updateURL($event)"
+      ></drop-select>
+    </div>
+    <div class="main-header__nav--tabs">
+      <app-tabs
+        [tabs]="links"
+        [selectedTab]="nav"
+        (pickTab)="updateURL($event)"
+      ></app-tabs>
+    </div>
   </div>
   <div class="main-header__social">
     <i class="fab fa-github"></i>
