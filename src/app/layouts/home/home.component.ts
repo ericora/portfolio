@@ -1,4 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  HostListener,
+  Renderer2,
+} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -39,7 +46,7 @@ export class HomeComponent implements OnInit {
     'RESTful API',
     'Firebase',
   ];
-  constructor() {}
+  constructor(private render: Renderer2) {}
 
   ngOnInit(): void {}
 
@@ -82,5 +89,12 @@ export class HomeComponent implements OnInit {
         ease: 'linear',
       }
     );
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if (event.target.innerWidth > 768) {
+      this.slideSkills(0, 0);
+    }
   }
 }
