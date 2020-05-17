@@ -8,7 +8,7 @@
   <div
     class="drop-select__option"
     *ngFor="let option of options"
-    (click)="selectOption.next(option?.value)"
+    (click)="tapOption(option?.value)"
   >
     {{ option?.title }}
   </div>

@@ -1,5 +1,5 @@
 @import './src/styles/abstract/variables';
-
+@import './src/styles/abstract/mixins';
 .components {
   width: 100%;
   min-height: 150vh;
@@ -29,6 +29,26 @@
       background-color: $color_comp_bottom;
       border-radius: 200rem 0 0 0/ 30rem 0 0 0;
       box-sizing: border-box;
+    }
+  }
+
+  &-body {
+    width: 90%;
+    max-width: 128rem;
+    &--title {
+      margin-top: 15rem;
+      margin-bottom: 5rem;
+      font-size: 5.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      width: 50%;
+      @include respond-md {
+        align-self: center;
+        font-size: 3.8rem;
+        text-align: center;
+        margin-top: 5rem;
+        width: 80%;
+      }
     }
   }
 }

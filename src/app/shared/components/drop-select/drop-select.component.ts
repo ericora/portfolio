@@ -30,6 +30,10 @@ export class DropSelectComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
+  tapOption(option) {
+    this.selectOption.next(option);
+    this.isOpen = false;
+  }
   @HostListener('document:click', ['$event'])
   callapseCalender() {
     if (!this.elemRef.nativeElement.contains(event.target) && this.isOpen) {
