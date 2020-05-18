@@ -11,5 +11,37 @@
         flexibility.
       </span>
     </div>
+
+    <ngx-masonry [options]="masonryOptions">
+      <div ngxMasonryItem class="masonry-item-c flex-column flex-column-mid">
+        <div class="components__comp--title">Date Picker</div>
+        <div class="components__comp--date">
+          <date-picker></date-picker>
+        </div>
+        <div class="components__comp--date--input flex-row flex-row-mid">
+          Dropdown Date Picker: &nbsp;
+          <input
+            type="text"
+            name="date"
+            id="date"
+            class="text-round-bs"
+            placeholder="YYYY/MM/DD"
+            (click)="toggleDropDate()"
+          />
+          <div
+            class="components__comp--date components__comp--date--drop round-shadow"
+            *ngIf="isDropDate"
+          >
+            <date-picker></date-picker>
+          </div>
+        </div>
+      </div>
+      <div ngxMasonryItem class="masonry-item-c">
+        sdasd
+      </div>
+      <div ngxMasonryItem class="masonry-item-c">
+        sdasd
+      </div>
+    </ngx-masonry>
   </div>
 </div>

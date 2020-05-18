@@ -1,0 +1,43 @@
+<div class="date-picker">
+    <div class="date-picker-header">
+        <div class="date-picker-header__btns">
+            <button class="date-picker-header__btns--arrow" (click)="prevous()">
+                <i class="fas fa-angle-left"></i>
+            </button>
+            <button class="date-picker-header__btns--date" (click)="showMonths()" *ngIf="tableOnShow === 'dates'">
+                <span>{{months[monthOnShow]}}</span>
+            </button>
+            <button class="date-picker-header__btns--date" (click)="showYears()">
+                <span *ngIf="tableOnShow !== 'years'">{{yearOnShow}}</span>
+                <span *ngIf="tableOnShow === 'years'">{{generateYears()[0]}}&nbsp;-&nbsp;{{generateYears()[15]}}</span>
+            </button>
+            <button class="date-picker-header__btns--arrow" (click)="next()">
+                <i class="fas fa-angle-right"></i>
+            </button>
+        </div>
+    </div>
+    <div class="date-picker-body" *ngIf="tableOnShow === 'dates'">
+        <div class="date-picker-body-cell" *ngFor="let weekday of weekdays">
+            <span>{{weekday}}</span>
+        </div>
+        <div class="date-picker-body-cell" *ngFor="let n of arrayGenerator(weekdayOfFirst)">
+            <span></span>
+        </div>
+        <div class="date-picker-body-cell" *ngFor="let day of daysInTheMonth; let i = index">
+            <button [disabled]="checkDisable(day)" (click)="selectDate(day)"
+                [ngClass]="{'selectedDate': day.getTime() === selectedDate.getTime()}">{{i + 1}}</button>
+        </div>
+    </div>
+    <div class="date-picker-months" *ngIf="tableOnShow === 'months'">
+        <div class="date-picker-months-cell" *ngFor="let month of months; let i = index">
+            <button [disabled]="checkMonthDisable(month)" [value]="generateMonth(month)" (click)="selectMonth(month)"
+                [ngClass]="{'selectedDate': selectedDate.getFullYear() === yearOnShow && i === selectedDate.getMonth()}">{{month}}</button>
+        </div>
+    </div>
+    <div class="date-picker-years" *ngIf="tableOnShow === 'years'">
+        <div class="date-picker-years-cell" *ngFor="let year of generateYears()">
+            <button [disabled]="checkYearDisable(year)" (click)="selectYear(year)"
+                [ngClass]="{'selectedDate': selectedDate.getFullYear() === year}">{{year}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,198 @@
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.date-picker {
+    font-size: 1.2rem;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    &-header {
+      height: 15%;
+      padding: 1rem;
+      box-sizing: border-box;
+      &__btns {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100%;
+        & > button {
+          cursor: pointer;
+          background-color: transparent;
+          &:hover {
+            background-color: lightgray;
+          }
+        }
+        &--arrow {
+          font-size: 2rem;
+          border-radius: 50%;
+          width: 3rem;
+          height: 3rem;
+          border: 0;
+        }
+        &--date {
+          border-radius: 10rem;
+          padding: 0.6rem 1rem;
+          box-sizing: border-box;
+          border: 0;
+        }
+      }
+    }
+    &-body {
+      flex: 1;
+      display: -ms-grid;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      &-cell {
+        font-size: 1.2rem;
+        height: 100%;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+  
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+  
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+  
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        & > button {
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+          max-width: 3rem;
+          max-height: 3rem;
+          border: 0;
+          cursor: pointer;
+          background-color: transparent;
+          &:hover {
+            background-color: lightgray;
+          }
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+    &-months {
+      flex: 1;
+      display: -ms-grid;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      &-cell {
+        font-size: 1.2rem;
+        height: 100%;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+  
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+  
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+  
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        & > button {
+          border-radius: 10rem;
+          padding: 0.6rem 1rem;
+          border: 0;
+          cursor: pointer;
+          background-color: transparent;
+          &:hover {
+            background-color: lightgray;
+          }
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+    &-years {
+      flex: 1;
+      display: -ms-grid;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      &-cell {
+        font-size: 1.2rem;
+        height: 100%;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+  
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+  
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+  
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        & > button {
+          border-radius: 50%;
+          width: 3rem;
+          height: 3rem;
+          border: 0;
+          cursor: pointer;
+          background-color: transparent;
+          &:hover {
+            background-color: lightgray;
+          }
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+  
+  .selectedDate {
+    border: thin solid #000000 !important;
+    box-sizing: border-box;
+  }
+  
+  button:disabled,
+  button[disabled] {
+    cursor: not-allowed;
+  }
+  

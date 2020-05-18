@@ -50,5 +50,36 @@
         width: 80%;
       }
     }
+    &--box {
+      height: 100rem;
+      // background-color: red;
+    }
+  }
+
+  &__comp {
+    &--title {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    &--date {
+      width: 25rem;
+      height: 25rem;
+      border-radius: 1rem;
+      border: 1px solid $color_line;
+      margin-bottom: 1rem;
+      &--input {
+        font-size: 1.5rem;
+        position: relative;
+      }
+      &--drop {
+        position: absolute;
+        top: 3rem;
+        right: 0;
+        background-color: #ffffff;
+      }
+    }
   }
 }

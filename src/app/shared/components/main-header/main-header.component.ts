@@ -19,11 +19,11 @@ export class MainHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     { title: 'Home', value: 'home' },
     { title: 'Experiences', value: 'experiences' },
     { title: 'Components', value: 'components' },
-    { title: 'Dashbord', value: 'dashbord' },
     { title: 'Contact', value: 'contact' },
   ];
   nav: string;
   routerSub$: Subscription;
+  isShowProfile = false;
   constructor(
     private router: Router,
     private pathServ: PathService,
@@ -48,6 +48,10 @@ export class MainHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
     this.cdRef.detectChanges();
+  }
+
+  showContactBox() {
+    this.isShowProfile = !this.isShowProfile;
   }
 
   ngOnDestroy(): void {

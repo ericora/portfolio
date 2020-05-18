@@ -56,12 +56,33 @@
       height: 3rem;
       width: 3rem;
       margin: 0 1rem;
-      & img {
+      position: relative;
+      & > img {
         height: 100%;
         width: 100%;
         object-fit: cover;
         border-radius: 50%;
         cursor: pointer;
+      }
+      &--expand {
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        width: 35rem;
+        padding: 2rem;
+        background-color: #ffffff;
+        &--big-pic {
+          & > img {
+            object-fit: cover;
+            border-radius: 50%;
+            width: 10rem;
+            height: 10rem;
+          }
+        }
+        &--email {
+          font-size: 1.8rem;
+          margin: 1rem;
+        }
       }
     }
   }

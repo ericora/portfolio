@@ -26,7 +26,27 @@
       <i class="fab fa-linkedin"></i>
     </a>
     <div class="main-header__social--pic">
-      <img src="../../../assets/profile-pic/11589217482_.pic.jpg" alt="" />
+      <img
+        src="../../../assets/profile-pic/11589217482_.pic.jpg"
+        alt=""
+        (click)="showContactBox()"
+      />
+
+      <div
+        class="main-header__social--pic--expand round-shadow flex-column flex-column-mid"
+        *ngIf="isShowProfile"
+      >
+        <div class="main-header__social--pic--expand--big-pic">
+          <img src="../../../assets/profile-pic/11589217482_.pic.jpg" alt="" />
+        </div>
+        <div class="main-header__social--pic--expand--email text-round-bs">
+          <span
+            ><a href="mailto:ericz910508@gmail.com"
+              >ericz910508@gmail.com</a
+            ></span
+          >
+        </div>
+      </div>
     </div>
   </div>
 </div>

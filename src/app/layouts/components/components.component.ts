@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-components',
   templateUrl: './components.component.html',
-  styleUrls: ['./components.component.scss']
+  styleUrls: ['./components.component.scss'],
 })
 export class ComponentsComponent implements OnInit {
+  masonryOptions = {
+    gutter: 30,
+    initLayout: true,
+  };
+  isDropDate = false;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  toggleDropDate() {
+    this.isDropDate = !this.isDropDate;
   }
-
 }
