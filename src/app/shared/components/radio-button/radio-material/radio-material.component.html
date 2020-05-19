@@ -1,14 +1,11 @@
 <div class="radio-material" (click)="toggleCheck()">
   <div class="radio-material--bar" #back></div>
-  <div
-    class="radio-material--radio circle"
-    [style.background-color]="isChecked ? activeBac : inActiveBac"
-    #circle
-  ></div>
-  <!-- <img
-    *ngIf="custom"
-    src="custom"
-    class="radio-material-radio circle"
-    #circle
-  /> -->
+  <div class="radio-material--radio" #circle>
+    <div
+      *ngIf="!isCustom"
+      class="circle"
+      [style.background-color]="isChecked ? activeBac : inActiveBac"
+    ></div>
+    <img *ngIf="isCustom" [src]="custom" class="custom-controler" />
+  </div>
 </div>

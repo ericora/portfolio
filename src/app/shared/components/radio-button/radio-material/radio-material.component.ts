@@ -10,6 +10,7 @@ import {
   SimpleChanges,
   OnChanges,
   AfterViewInit,
+  ChangeDetectorRef,
 } from '@angular/core';
 
 @Component({
@@ -22,10 +23,12 @@ export class RadioMaterialComponent
   @Input() isChecked = false;
   @Input() activeBac;
   @Input() inActiveBac;
+  @Input() custom;
   @Output() checkAction = new EventEmitter();
   @ViewChild('circle', { static: true }) cricleBtn: ElementRef;
   @ViewChild('back', { static: true }) btnBack: ElementRef;
-  constructor(private renderer: Renderer2) {}
+  isCustom = false;
+  constructor(private renderer: Renderer2, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
 
@@ -37,6 +40,8 @@ export class RadioMaterialComponent
 
   ngAfterViewInit() {
     this.initCheck();
+    this.isCustom = Boolean(this.custom);
+    this.cdRef.detectChanges();
   }
 
   toggleCheck() {
@@ -46,6 +51,13 @@ export class RadioMaterialComponent
   }
 
   initCheck() {
+    if (this.custom) {
+      this.renderer.setStyle(
+        this.cricleBtn.nativeElement,
+        'background-color',
+        'transparent'
+      );
+    }
     if (this.isChecked) {
       const backWidth = this.btnBack.nativeElement.offsetWidth;
       const circleWidth = this.cricleBtn.nativeElement.offsetWidth;

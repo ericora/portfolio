@@ -37,12 +37,21 @@
     -o-transition: all 0.4s ease;
     width: 2rem;
     height: 2rem;
-    box-shadow: 0 0 0.5rem gray;
+    & > .circle {
+      width: 100%;
+      height: 100%;
+    }
+    & > img {
+      width: 100%;
+      height: 100%;
+      user-select: none;
+    }
   }
 }
 
 .circle {
   border-radius: 5rem;
+  box-shadow: 0 0 0.5rem gray;
   -webkit-border-radius: 5rem;
   -moz-border-radius: 5rem;
   -ms-border-radius: 5rem;
