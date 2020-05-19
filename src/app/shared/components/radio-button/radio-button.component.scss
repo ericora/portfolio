@@ -1,0 +1,38 @@
+.radio-btn {
+  position: relative;
+  min-width: 4rem;
+  min-height: 2.5rem;
+  cursor: pointer;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  width: 4rem;
+  height: 2.5rem;
+  &-circle {
+    position: absolute;
+    font-size: 1.2rem;
+    color: #fd9b27;
+    top: 50%;
+    left: 2px;
+    background-color: white;
+    border-radius: 5rem;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    width: 2rem;
+    height: 2rem;
+  }
+}

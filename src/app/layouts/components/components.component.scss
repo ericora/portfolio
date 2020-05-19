@@ -50,9 +50,27 @@
         width: 80%;
       }
     }
-    &--box {
-      height: 100rem;
-      // background-color: red;
+    &--masonry {
+      width: 100%;
+      column-count: 3;
+      column-gap: 2rem;
+      &--container {
+        padding: 0.5rem;
+        margin: 0 0 2rem;
+        -webkit-column-break-inside: avoid; /* Chrome, Safari */
+        page-break-inside: avoid; /* Theoretically FF 20+ */
+        break-inside: avoid-column; /* IE 11 */
+      }
+      &--item {
+        display: flex;
+        padding: 1rem;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 1rem;
+        box-shadow: 0 0 0.5rem gray;
+        box-sizing: border-box;
+      }
     }
   }
 
@@ -82,4 +100,10 @@
       }
     }
   }
+}
+
+.radio__box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
 }
