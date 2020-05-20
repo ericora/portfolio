@@ -54,6 +54,9 @@
       width: 100%;
       column-count: 3;
       column-gap: 2rem;
+      @include respond-s {
+        column-count: 1;
+      }
       &--container {
         padding: 0.5rem;
         margin: 0 0 2rem;
