@@ -1,0 +1,21 @@
+<div
+  class="sortable flex-column"
+  (dragover)="onBoxDragover($event)"
+  (dragenter)="cancelEvent($event)"
+  (drop)="resetActiveItem($event)"
+  (mouseleave)="resetActiveItem($event)"
+>
+  <div
+    class="sortable--item flex-row flex-row-mid"
+    *ngFor="let item of items; let i = index"
+    draggable="true"
+    (dragstart)="onItemDragstart($event, item, i)"
+    (dragend)="resetActiveItem($event)"
+    (dragover)="onItemDragover($event, i)"
+    (dragenter)="cancelEvent($event)"
+    aria-dropeffect="move"
+    [attr.aria-grabbed]="i === activeItem"
+  >
+    {{ item.value }}
+  </div>
+</div>

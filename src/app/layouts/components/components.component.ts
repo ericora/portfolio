@@ -28,6 +28,9 @@ export class ComponentsComponent implements OnInit {
   inputDate;
   selectedDate = new Date();
   @ViewChild('dropDate') dropDate: ElementRef;
+
+  dragItemsLeft = ['Eric', 'Jessica', 'Billy', 'Chloe'];
+  dragItemsRight = ['Furion', 'Carol'];
   constructor(@Inject(LOCALE_ID) public locale: string) {}
 
   ngOnInit(): void {}
@@ -47,4 +50,9 @@ export class ComponentsComponent implements OnInit {
   dateChange(date) {
     this.inputDate = formatDate(date, 'MM/dd/yyyy', this.locale);
   }
+
+  dragging(item) {
+    console.log(item);
+  }
+  drop(item) {}
 }

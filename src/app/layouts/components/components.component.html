@@ -94,6 +94,28 @@
           </div>
         </div>
       </div>
+
+      <div class="components-body--masonry--container">
+        <div class="components-body--masonry--item">
+          <div class="components__comp--title">Drag and Drop</div>
+          <div class="drag-drop flex-row flex-row-btw">
+            <div class="drag-drop--box">
+              <app-sortable
+                [(ngModel)]="dragItemsLeft"
+                name="fieldName"
+                ngDefaultControl
+              ></app-sortable>
+            </div>
+            <div class="drag-drop--box">
+              <app-sortable
+                [(ngModel)]="dragItemsRight"
+                name="fieldName"
+                ngDefaultControl
+              ></app-sortable>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

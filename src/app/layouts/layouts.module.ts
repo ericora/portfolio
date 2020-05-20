@@ -1,3 +1,4 @@
+import { SortableModule } from './../shared/components/sortable/sortable.module';
 import { RadioButtonModule } from './../shared/components/radio-button/radio-button.module';
 import { DatePickerModule } from './../shared/components/date-picker/date-picker.module';
 import { MainHeaderModule } from '../shared/components/main-header/main-header.module';
@@ -25,6 +26,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
     DatePickerModule,
     RadioButtonModule,
     FormsModule,
+    SortableModule,
   ],
 })
 export class LayoutsModule {}
