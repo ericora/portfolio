@@ -6,6 +6,12 @@
   (mouseleave)="resetActiveItem($event)"
 >
   <div
+    *ngIf="showPlaceholder"
+    class="sortable--item flex-row flex-row-mid"
+    (dragover)="onItemDragover($event, 0)"
+    (dragenter)="cancelEvent($event)"
+  ></div>
+  <div
     class="sortable--item flex-row flex-row-mid"
     *ngFor="let item of items; let i = index"
     draggable="true"

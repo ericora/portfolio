@@ -34,6 +34,7 @@ export class SortableComponent implements ControlValueAccessor {
   private transfer: DraggableItemService;
   private currentZoneIndex: number;
   private _items: SortableItem[];
+  showPlaceholder = false;
   get items(): SortableItem[] {
     return this._items;
   }
@@ -99,12 +100,10 @@ export class SortableComponent implements ControlValueAccessor {
     this.items = newArray;
     dragItem.i = i;
     this.activeItem = i;
-    // this.updatePlaceholderState();
+    this.updatePlaceholderState();
   }
 
   cancelEvent(event: DragEvent): void {
-    console.log('here');
-
     if (!this.transfer.getItem() || !event) {
       return;
     }
@@ -120,6 +119,7 @@ export class SortableComponent implements ControlValueAccessor {
       this.items = this.items.filter(
         (x: SortableItem, i: number) => i !== item.i
       );
+      this.updatePlaceholderState();
     }
     this.resetActiveItem(undefined);
   }
@@ -147,8 +147,6 @@ export class SortableComponent implements ControlValueAccessor {
 
   /* tslint:disable-next-line: no-any */
   writeValue(value: any[]): void {
-    console.log(value);
-
     if (value) {
       /* tslint:disable-next-line: no-any */
       this.items = value.map((x: any, i: number) => ({
@@ -159,6 +157,11 @@ export class SortableComponent implements ControlValueAccessor {
     } else {
       this.items = [];
     }
+    this.updatePlaceholderState();
+  }
+
+  updatePlaceholderState(): void {
+    this.showPlaceholder = !this._items.length;
   }
   private initDragstartEvent(event: DragEvent): void {
     // it is necessary for mozilla
