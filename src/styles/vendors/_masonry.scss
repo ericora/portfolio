@@ -1,4 +1,5 @@
 @import './src/styles/abstract/variables';
+@import './src/styles/abstract/mixins';
 .masonry-item {
   width: calc((100% - 60px) / 3);
   background-color: #ffffff;
@@ -6,4 +7,32 @@
   // box-shadow: 0 0 0.5rem gray;
   // padding: 1rem;
   // box-sizing: border-box;
+}
+
+.grid {
+  position: relative;
+}
+.item {
+  display: block;
+  position: absolute;
+  width: calc((100% - 9rem) / 3);
+  margin: 1rem;
+  z-index: 1;
+  @include respond-s {
+    width: 100%;
+  }
+}
+.item.muuri-item-dragging {
+  z-index: 3;
+}
+.item.muuri-item-releasing {
+  z-index: 2;
+}
+.item.muuri-item-hidden {
+  z-index: 0;
+}
+.item-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }

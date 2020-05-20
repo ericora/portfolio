@@ -6,9 +6,11 @@ import {
   ElementRef,
   LOCALE_ID,
   Inject,
+  NgZone,
 } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { isDate } from 'util';
+import * as Muuri from 'muuri';
 
 @Component({
   selector: 'app-components',
@@ -31,9 +33,19 @@ export class ComponentsComponent implements OnInit {
 
   dragItemsLeft = ['Eric', 'Jessica', 'Billy', 'Chloe'];
   dragItemsRight = ['Furion', 'Carol'];
-  constructor(@Inject(LOCALE_ID) public locale: string) {}
+  constructor(@Inject(LOCALE_ID) public locale: string, private zone: NgZone) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.muuriMasonry();
+  }
+
+  muuriMasonry() {
+    this.zone.runOutsideAngular(() =>
+      setTimeout(() => {
+        const grid = new Muuri.default('.grid');
+      }, 100)
+    );
+  }
 
   inputDateTo(key) {
     if (key.keyCode === 13) {

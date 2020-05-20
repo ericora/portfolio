@@ -51,19 +51,19 @@
       }
     }
     &--masonry {
-      width: 100%;
-      column-count: 3;
-      column-gap: 2rem;
-      @include respond-s {
-        column-count: 1;
-      }
-      &--container {
-        padding: 0.5rem;
-        margin: 0 0 2rem;
-        -webkit-column-break-inside: avoid; /* Chrome, Safari */
-        page-break-inside: avoid; /* Theoretically FF 20+ */
-        break-inside: avoid-column; /* IE 11 */
-      }
+      // width: 100%;
+      // column-count: 3;
+      // column-gap: 2rem;
+      // @include respond-s {
+      //   column-count: 1;
+      // }
+      // &--container {
+      //   padding: 0.5rem;
+      //   margin: 0 0 2rem;
+      //   -webkit-column-break-inside: avoid; /* Chrome, Safari */
+      //   page-break-inside: avoid; /* Theoretically FF 20+ */
+      //   break-inside: avoid-column; /* IE 11 */
+      // }
       &--item {
         display: flex;
         padding: 1rem;
@@ -73,6 +73,7 @@
         border-radius: 1rem;
         box-shadow: 0 0 0.5rem gray;
         box-sizing: border-box;
+        z-index: 5;
       }
     }
   }

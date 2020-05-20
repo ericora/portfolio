@@ -11,114 +11,139 @@
         flexibility.
       </span>
     </div>
-    <div class="components-body--masonry">
-      <div class="components-body--masonry--container">
-        <div class="components-body--masonry--item">
-          <div class="components__comp--title">Date Picker</div>
-          <div class="components__comp--date">
-            <date-picker
-              [selectedDate]="selectedDate"
-              (dateChange)="dateChange($event)"
-            ></date-picker>
+
+    <div class="grid">
+      <div class="item">
+        <div class="item-content">
+          <!-- Safe zone, enter your custom markup -->
+          <div class="components-body--masonry--item">
+            <div class="components__comp--title">Date Picker</div>
+            <div class="components__comp--date">
+              <date-picker
+                [selectedDate]="selectedDate"
+                (dateChange)="dateChange($event)"
+              ></date-picker>
+            </div>
+            <div
+              class="components__comp--date--input flex-row flex-row-mid"
+              #dropDate
+            >
+              <input
+                type="text"
+                name="date"
+                id="date"
+                class="text-round-bs"
+                placeholder="MM/DD/YYYY"
+                [(ngModel)]="inputDate"
+                (keypress)="inputDateTo($event)"
+              />
+            </div>
           </div>
-          <div
-            class="components__comp--date--input flex-row flex-row-mid"
-            #dropDate
-          >
-            <input
-              type="text"
-              name="date"
-              id="date"
-              class="text-round-bs"
-              placeholder="MM/DD/YYYY"
-              [(ngModel)]="inputDate"
-              (keypress)="inputDateTo($event)"
-            />
+          <!-- Safe zone ends -->
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-content">
+          <!-- Safe zone, enter your custom markup -->
+          <div class="components-body--masonry--item">
+            <div class="components__comp--title">Check Box</div>
+            <div class="radio__box">
+              <radio-button></radio-button>
+              <radio-button
+                [activeBac]="'#039be5'"
+                [inActiveBac]="'#cdcdcd'"
+              ></radio-button>
+              <radio-button
+                [activeBac]="'#ff8a65'"
+                [inActiveBac]="'#63b7af'"
+              ></radio-button>
+              <radio-button
+                [activeBac]="'#fcf876'"
+                [inActiveBac]="'#e4e4e4'"
+              ></radio-button>
+              <radio-material
+                [activeBac]="'#fd9b27'"
+                [inActiveBac]="'#000000'"
+              ></radio-material>
+              <radio-material
+                [activeBac]="'#039be5'"
+                [inActiveBac]="'#cdcdcd'"
+              ></radio-material>
+              <radio-material
+                [activeBac]="'#ff8a65'"
+                [inActiveBac]="'#63b7af'"
+              ></radio-material>
+              <radio-material
+                [activeBac]="'#fcf876'"
+                [inActiveBac]="'#e4e4e4'"
+              ></radio-material>
+              <radio-material
+                [activeBac]="'#fd9b27'"
+                [inActiveBac]="'#000000'"
+                [custom]="'assets/icons/dog_icon.png'"
+              ></radio-material>
+              <radio-material
+                [activeBac]="'#039be5'"
+                [inActiveBac]="'#cdcdcd'"
+                [custom]="'assets/icons/cat_icon.png'"
+              ></radio-material>
+              <radio-material
+                [activeBac]="'#ff8a65'"
+                [inActiveBac]="'#63b7af'"
+                [custom]="'assets/icons/man_icon.png'"
+              ></radio-material>
+              <radio-material
+                [activeBac]="'#fcf876'"
+                [inActiveBac]="'#e4e4e4'"
+                [custom]="'assets/icons/star_icon.png'"
+              ></radio-material>
+            </div>
           </div>
+          <!-- Safe zone ends -->
         </div>
       </div>
 
-      <div class="components-body--masonry--container">
-        <div class="components-body--masonry--item">
-          <div class="components__comp--title">Check Box</div>
-          <div class="radio__box">
-            <radio-button></radio-button>
-            <radio-button
-              [activeBac]="'#039be5'"
-              [inActiveBac]="'#cdcdcd'"
-            ></radio-button>
-            <radio-button
-              [activeBac]="'#ff8a65'"
-              [inActiveBac]="'#63b7af'"
-            ></radio-button>
-            <radio-button
-              [activeBac]="'#fcf876'"
-              [inActiveBac]="'#e4e4e4'"
-            ></radio-button>
-            <radio-material
-              [activeBac]="'#fd9b27'"
-              [inActiveBac]="'#000000'"
-            ></radio-material>
-            <radio-material
-              [activeBac]="'#039be5'"
-              [inActiveBac]="'#cdcdcd'"
-            ></radio-material>
-            <radio-material
-              [activeBac]="'#ff8a65'"
-              [inActiveBac]="'#63b7af'"
-            ></radio-material>
-            <radio-material
-              [activeBac]="'#fcf876'"
-              [inActiveBac]="'#e4e4e4'"
-            ></radio-material>
-            <radio-material
-              [activeBac]="'#fd9b27'"
-              [inActiveBac]="'#000000'"
-              [custom]="'assets/icons/dog_icon.png'"
-            ></radio-material>
-            <radio-material
-              [activeBac]="'#039be5'"
-              [inActiveBac]="'#cdcdcd'"
-              [custom]="'assets/icons/cat_icon.png'"
-            ></radio-material>
-            <radio-material
-              [activeBac]="'#ff8a65'"
-              [inActiveBac]="'#63b7af'"
-              [custom]="'assets/icons/man_icon.png'"
-            ></radio-material>
-            <radio-material
-              [activeBac]="'#fcf876'"
-              [inActiveBac]="'#e4e4e4'"
-              [custom]="'assets/icons/star_icon.png'"
-            ></radio-material>
-          </div>
-        </div>
-      </div>
-
-      <div class="components-body--masonry--container">
-        <div class="components-body--masonry--item">
-          <div class="components__comp--title">Drag and Drop</div>
-          <div class="drag-drop flex-row flex-row-btw">
-            <div class="drag-drop--box">
-              <app-sortable
-                [(ngModel)]="dragItemsLeft"
-                name="fieldName"
-                ngDefaultControl
-              ></app-sortable>
-            </div>
-            <div class="drag-drop--box">
-              <app-sortable
-                [(ngModel)]="dragItemsRight"
-                name="fieldName"
-                ngDefaultControl
-              ></app-sortable>
+      <div class="item">
+        <div class="item-content">
+          <!-- Safe zone, enter your custom markup -->
+          <div class="components-body--masonry--item">
+            <div class="components__comp--title">Drag and Drop</div>
+            <div class="drag-drop flex-row flex-row-btw">
+              <div class="drag-drop--box">
+                <app-sortable
+                  [(ngModel)]="dragItemsLeft"
+                  name="fieldName"
+                  ngDefaultControl
+                ></app-sortable>
+              </div>
+              <div class="drag-drop--box">
+                <app-sortable
+                  [(ngModel)]="dragItemsRight"
+                  name="fieldName"
+                  ngDefaultControl
+                ></app-sortable>
+              </div>
             </div>
           </div>
+          <!-- Safe zone ends -->
         </div>
       </div>
-      <div class="components-body--masonry--container">
-        <div class="components-body--masonry--item">
-          <div class="components__comp--title">Pagination</div>
+      <div class="item">
+        <div class="item-content">
+          <!-- Safe zone, enter your custom markup -->
+          <div class="components-body--masonry--item">
+            <div class="components__comp--title">Drag and Drop</div>
+          </div>
+          <!-- Safe zone ends -->
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-content">
+          <!-- Safe zone, enter your custom markup -->
+          <div class="components-body--masonry--item">
+            Yippee!
+          </div>
+          <!-- Safe zone ends -->
         </div>
       </div>
     </div>
