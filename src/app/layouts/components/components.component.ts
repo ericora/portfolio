@@ -61,11 +61,6 @@ export class ComponentsComponent implements OnInit, OnDestroy {
     this.inputDate = formatDate(date, 'MM/dd/yyyy', this.locale);
   }
 
-  sendEmail() {
-    this.fireService.sendEmailToMe().subscribe((res) => {
-      console.log(res);
-    });
-  }
   ngOnDestroy(): void {
     if (this.masonry) {
       this.masonry.remove('.grid');

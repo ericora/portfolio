@@ -1,3 +1,4 @@
+import { FirebaseService } from './../../shared/services/api/firebase.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
@@ -11,9 +12,15 @@ export class ContactComponent implements OnInit {
     email: [''],
     message: [''],
   });
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private fireService: FirebaseService) {}
   ngOnInit(): void {}
   onSubmit() {
-    console.log(this.messageForm.value);
+    this.fireService.sendEmailToMe(this.messageForm.value).subscribe(
+      (res) => {},
+      (error) => {
+        if (error.status === 200) {
+        }
+      }
+    );
   }
 }

@@ -8,9 +8,10 @@ import { HttpClient } from '@angular/common/http';
 export class FirebaseService {
   constructor(private http: HttpClient) {}
 
-  sendEmailToMe() {
+  sendEmailToMe(params) {
     const firebaseEmail = environment.firebaseFuc + '/email';
     return this.http.get<any>(firebaseEmail, {
+      params,
       observe: 'response',
     });
   }
