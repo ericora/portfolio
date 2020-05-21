@@ -47,4 +47,9 @@
     transform: scale(1.2);
     opacity: 0;
   }
+
+  &:disabled {
+    cursor: no-drop;
+    background-color: lighten($color_orage_round, 20%);
+  }
 }

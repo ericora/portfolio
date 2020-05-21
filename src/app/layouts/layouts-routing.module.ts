@@ -1,3 +1,4 @@
+import { ContactComponent } from './contact/contact.component';
 import { ComponentsComponent } from './components/components.component';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'components',
         component: ComponentsComponent,
+      },
+      {
+        path: 'contact',
+        component: ContactComponent,
       },
       {
         path: '',

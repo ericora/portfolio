@@ -1,0 +1,60 @@
+<div class="contact flex-row flex-row-center">
+  <div class="contact-background flex-column">
+    <div class="contact-background--top"></div>
+    <div class="contact-background--mid"></div>
+    <div class="contact-background--bottom"></div>
+  </div>
+  <div class="contact-body flex-column">
+    <div class="contact-body--title">
+      <span> Contact Me.<br />Would like to work on cool things</span>
+    </div>
+    <div class="contact-body__box flex-column flex-column-mid">
+      <form
+        class="contact-body__form flex-column flex-column-mid round-shadow"
+        [formGroup]="messageForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <div class="contact-body__box--title">
+          Contact Me
+        </div>
+        <div class="contact-body__form--email">
+          <input id="email" type="email" formControlName="email" />
+          <label
+            for="email"
+            [ngClass]="{ 'full-input': messageForm.value.email }"
+            >Email</label
+          >
+        </div>
+        <div class="contact-body__form--msg">
+          <textarea
+            name=""
+            id="msg"
+            formControlName="message"
+            required
+          ></textarea>
+          <label
+            for="msg"
+            [ngClass]="{ 'full-input': messageForm.value.message }"
+            >Message</label
+          >
+        </div>
+        <ul class="contact-body__form--notice">
+          <li>You have a cool project and need a front end developer</li>
+          <li>You have a front end job opportunity</li>
+          <li>You have font end related questions</li>
+          <li>
+            Feel Free to send me any message and leave your email, I will get
+            back to you
+          </li>
+        </ul>
+        <button
+          type="submit"
+          class="contact-body__form--submit text-round"
+          [disabled]="!messageForm.valid"
+        >
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

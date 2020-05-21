@@ -1,0 +1,185 @@
+@import './src/styles/abstract/variables';
+@import './src/styles/abstract/mixins';
+.contact {
+  width: 100%;
+  min-height: 150vh;
+  position: relative;
+  &-background {
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    &--top {
+      width: 100vw;
+      height: 50rem;
+      background-color: $color_contact_top;
+      border-radius: 0 0 200rem 0/ 0 0 30rem 0;
+      box-sizing: border-box;
+    }
+
+    &--mid {
+      width: 100vw;
+      height: 15rem;
+      background-color: #ffffff;
+    }
+
+    &--bottom {
+      width: 100vw;
+      flex: 1;
+      background-color: $color_contact_bottom;
+      border-radius: 200rem 0 0 0/ 30rem 0 0 0;
+      box-sizing: border-box;
+    }
+  }
+  &-body {
+    width: 90%;
+    max-width: 128rem;
+    &--title {
+      margin-top: 15rem;
+      margin-bottom: 5rem;
+      font-size: 5.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      width: 50%;
+      @include respond-md {
+        align-self: center;
+        font-size: 3.8rem;
+        text-align: center;
+        margin-top: 5rem;
+        width: 80%;
+      }
+    }
+    &__box {
+      &--title {
+        font-size: 2rem;
+      }
+    }
+    &__form {
+      width: 50%;
+      padding: 2rem;
+      font-size: 1.5rem;
+      background-color: #ffffff;
+      &--email {
+        position: relative;
+        margin: 1.5rem;
+        width: 60%;
+        & > input {
+          background-color: transparent;
+          outline: none;
+          font-size: 1.5rem;
+          padding: 1rem;
+          border: 0.2rem solid $color_line;
+          width: 100%;
+          height: 100%;
+          border-radius: 1rem;
+          -webkit-border-radius: 1rem;
+          -moz-border-radius: 1rem;
+          -ms-border-radius: 1rem;
+          -o-border-radius: 1rem;
+          &:focus + label {
+            top: 0;
+            padding: 0.3rem;
+            font-size: 1.2rem;
+            background-color: #ffffff;
+          }
+          &:focus {
+            box-shadow: 0 0 0.5rem $color_line_blue;
+          }
+        }
+        & > label {
+          position: absolute;
+          color: $color_text_light;
+          top: 50%;
+          left: 1rem;
+          background-color: transparent;
+          font-size: 1.5rem;
+          padding: 0 0.1rem;
+          box-sizing: border-box;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transition: top 0.1s ease-in-out;
+          -webkit-transition: top 0.1s ease-in-out;
+          -moz-transition: top 0.1s ease-in-out;
+          -ms-transition: top 0.1s ease-in-out;
+          -o-transition: top 0.1s ease-in-out;
+        }
+        & > .full-input {
+          top: 0;
+          padding: 0.3rem;
+          font-size: 1.2rem;
+          background-color: #ffffff;
+        }
+      }
+
+      &--msg {
+        position: relative;
+        margin: 1.5rem;
+        width: 60%;
+        & > textarea {
+          background-color: transparent;
+          outline: none;
+          font-size: 1.5rem;
+          padding: 1rem;
+          border: 0.2rem solid $color_line;
+          width: 100%;
+          height: 20rem;
+          border-radius: 1rem;
+          -webkit-border-radius: 1rem;
+          -moz-border-radius: 1rem;
+          -ms-border-radius: 1rem;
+          -o-border-radius: 1rem;
+          &:focus + label {
+            top: 0;
+            padding: 0.3rem;
+            font-size: 1.2rem;
+            background-color: #ffffff;
+          }
+          &:focus {
+            box-shadow: 0 0 0.5rem $color_line_blue;
+          }
+        }
+        & > label {
+          position: absolute;
+          color: $color_text_light;
+          top: 1.5rem;
+          left: 1rem;
+          background-color: transparent;
+          font-size: 1.5rem;
+          padding: 0 0.1rem;
+          box-sizing: border-box;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transition: top 0.1s ease-in-out;
+          -webkit-transition: top 0.1s ease-in-out;
+          -moz-transition: top 0.1s ease-in-out;
+          -ms-transition: top 0.1s ease-in-out;
+          -o-transition: top 0.1s ease-in-out;
+        }
+        & > .full-input {
+          top: 0;
+          padding: 0.3rem;
+          font-size: 1.2rem;
+          background-color: #ffffff;
+        }
+      }
+      &--notice {
+        width: 60%;
+        font-size: 1.2rem;
+        color: $color_text_light;
+        & > li {
+          margin: 0.5rem;
+        }
+      }
+
+      &--submit {
+        box-shadow: 0 0 0.5rem $color_orage_round;
+      }
+    }
+  }
+}

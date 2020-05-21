@@ -1,3 +1,4 @@
+import { FirebaseService } from './../../shared/services/api/firebase.service';
 import {
   Component,
   OnInit,
@@ -7,6 +8,7 @@ import {
   LOCALE_ID,
   Inject,
   NgZone,
+  OnDestroy,
 } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { isDate } from 'util';
@@ -17,23 +19,19 @@ import * as Muuri from 'muuri';
   templateUrl: './components.component.html',
   styleUrls: ['./components.component.scss'],
 })
-export class ComponentsComponent implements OnInit {
-  public masonryOptions = {
-    gutter: 30,
-    transitionDuration: '0s',
-    initLayout: true,
-    originTop: true,
-    originLeft: true,
-    horizontalOrder: true,
-    // itemSelector: '.masonry-item-c',
-  };
+export class ComponentsComponent implements OnInit, OnDestroy {
+  masonry;
   inputDate;
   selectedDate = new Date();
   @ViewChild('dropDate') dropDate: ElementRef;
 
   dragItemsLeft = ['Eric', 'Jessica', 'Billy', 'Chloe'];
   dragItemsRight = ['Furion', 'Carol'];
-  constructor(@Inject(LOCALE_ID) public locale: string, private zone: NgZone) {}
+  constructor(
+    @Inject(LOCALE_ID) public locale: string,
+    private zone: NgZone,
+    private fireService: FirebaseService
+  ) {}
 
   ngOnInit(): void {
     this.muuriMasonry();
@@ -42,7 +40,7 @@ export class ComponentsComponent implements OnInit {
   muuriMasonry() {
     this.zone.runOutsideAngular(() =>
       setTimeout(() => {
-        const grid = new Muuri.default('.grid');
+        this.masonry = new Muuri.default('.grid');
       }, 100)
     );
   }
@@ -63,8 +61,14 @@ export class ComponentsComponent implements OnInit {
     this.inputDate = formatDate(date, 'MM/dd/yyyy', this.locale);
   }
 
-  dragging(item) {
-    console.log(item);
+  sendEmail() {
+    this.fireService.sendEmailToMe().subscribe((res) => {
+      console.log(res);
+    });
   }
-  drop(item) {}
+  ngOnDestroy(): void {
+    if (this.masonry) {
+      this.masonry.remove('.grid');
+    }
+  }
 }

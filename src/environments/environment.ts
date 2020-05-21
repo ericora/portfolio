@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseFuc: 'https://us-central1-career-portfolio-7d82a.cloudfunctions.net',
 };
 
 /*
