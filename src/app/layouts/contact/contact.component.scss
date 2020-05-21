@@ -59,6 +59,9 @@
       padding: 2rem;
       font-size: 1.5rem;
       background-color: #ffffff;
+      @include respond-s {
+        width: 100%;
+      }
       &--email {
         position: relative;
         margin: 1.5rem;
