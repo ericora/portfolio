@@ -1,3 +1,4 @@
+import { AlertModule } from './../shared/components/alert/alert.module';
 import { SortableModule } from './../shared/components/sortable/sortable.module';
 import { RadioButtonModule } from './../shared/components/radio-button/radio-button.module';
 import { DatePickerModule } from './../shared/components/date-picker/date-picker.module';
@@ -30,6 +31,7 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     ReactiveFormsModule,
     SortableModule,
+    AlertModule,
   ],
 })
 export class LayoutsModule {}

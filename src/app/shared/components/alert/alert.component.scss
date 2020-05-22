@@ -1,0 +1,23 @@
+@import './src/styles/abstract/variables';
+@import './src/styles/abstract/mixins';
+.alert {
+  min-width: 30rem;
+  min-height: 5rem;
+  padding: 0.5rem 2rem;
+  background-color: $alert_danger;
+  position: fixed;
+  top: 7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  box-shadow: 0 0 0.5rem gray;
+  font-size: 1.8rem;
+}

@@ -1,6 +1,8 @@
+import { AlertService } from './../../shared/services/alert.service';
 import { FirebaseService } from './../../shared/services/api/firebase.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { concatMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contact',
@@ -12,15 +14,28 @@ export class ContactComponent implements OnInit {
     email: [''],
     message: [''],
   });
-  constructor(private fb: FormBuilder, private fireService: FirebaseService) {}
+  constructor(
+    private fb: FormBuilder,
+    private fireService: FirebaseService,
+    private alertService: AlertService
+  ) {}
   ngOnInit(): void {}
   onSubmit() {
     this.fireService.sendEmailToMe(this.messageForm.value).subscribe(
-      (res) => {},
+      (res) => this.sentMsgOver(),
       (error) => {
         if (error.status === 200) {
+          this.sentMsgOver();
         }
       }
     );
+  }
+
+  sentMsgOver() {
+    const successMsg =
+      'Message successfully sent. I will get back to you later. Thank you.';
+    const successTheme = 'success';
+    this.alertService.sendMsg(successMsg, successTheme);
+    this.messageForm.setValue({ email: '', message: '' });
   }
 }
