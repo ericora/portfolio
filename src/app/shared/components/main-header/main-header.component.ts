@@ -18,6 +18,7 @@ export class MainHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   links = [
     { title: 'Home', value: 'home' },
     { title: 'Experiences', value: 'experiences' },
+    { title: 'Projects', value: 'projects' },
     { title: 'Components', value: 'components' },
     { title: 'Contact', value: 'contact' },
   ];

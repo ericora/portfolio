@@ -1,0 +1,24 @@
+<div class="projects flex-row flex-row-center">
+  <div class="projects-background flex-column">
+    <div class="projects-background--top"></div>
+    <div class="projects-background--mid"></div>
+    <div class="projects-background--bottom"></div>
+  </div>
+  <div class="projects-body flex-column">
+    <div class="projects-body--title">
+      <span>
+        What have I learned?<br />Projects are what I learned and applyed.</span
+      >
+    </div>
+
+    <div class="grid projects-body__content">
+      <div class="item" *ngFor="let item of projects">
+        <div class="item-content">
+          <div class="projects-body__content--inner">
+            <project [project]="item"></project>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+@import './src/styles/abstract/variables';
+@import './src/styles/abstract/mixins';
+:host {
+  width: 100%;
+}
+.project {
+  width: 100%;
+  padding: 0 2rem;
+  &--name {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    font-weight: 800;
+    text-align: center;
+  }
+  &--description {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    color: $coloe_text_secondary;
+  }
+
+  &__techs {
+    width: 100%;
+    display: flex;
+    flex: row;
+    margin: 2rem 0;
+    &--tech {
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      background-color: $color_line_blue;
+      color: #ffffff;
+      margin: 0.5rem;
+      border-radius: 0.5rem;
+      -webkit-border-radius: 0.5rem;
+      -moz-border-radius: 0.5rem;
+      -ms-border-radius: 0.5rem;
+      -o-border-radius: 0.5rem;
+    }
+  }
+}

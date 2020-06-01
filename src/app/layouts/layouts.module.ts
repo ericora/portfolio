@@ -1,3 +1,4 @@
+import { ProjectModule } from './../shared/components/project/project.module';
 import { AlertModule } from './../shared/components/alert/alert.module';
 import { SortableModule } from './../shared/components/sortable/sortable.module';
 import { RadioButtonModule } from './../shared/components/radio-button/radio-button.module';
@@ -13,6 +14,7 @@ import { ExperiencesComponent } from './experiences/experiences.component';
 import { ComponentsComponent } from './components/components.component';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { ContactComponent } from './contact/contact.component';
+import { ProjectsComponent } from './projects/projects.component';
 @NgModule({
   declarations: [
     LayoutsComponent,
@@ -20,6 +22,7 @@ import { ContactComponent } from './contact/contact.component';
     ExperiencesComponent,
     ComponentsComponent,
     ContactComponent,
+    ProjectsComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +35,7 @@ import { ContactComponent } from './contact/contact.component';
     ReactiveFormsModule,
     SortableModule,
     AlertModule,
+    ProjectModule,
   ],
 })
 export class LayoutsModule {}

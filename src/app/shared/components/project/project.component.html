@@ -1,0 +1,13 @@
+<a class="project flex-column" [href]="project?.url" target="_blank">
+  <div class="project--name">
+    {{ project?.displayName }}
+  </div>
+  <div class="project--description">
+    {{ project?.description }}
+  </div>
+  <div class="project__techs">
+    <div class="project__techs--tech" *ngFor="let tech of project?.techs">
+      #{{ tech }}
+    </div>
+  </div>
+</a>
