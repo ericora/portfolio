@@ -22,6 +22,7 @@
     width: 100%;
     display: flex;
     flex: row;
+    flex-wrap: wrap;
     margin: 2rem 0;
     &--tech {
       padding: 0.5rem 1rem;
