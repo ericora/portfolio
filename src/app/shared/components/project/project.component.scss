@@ -21,7 +21,7 @@
   &__techs {
     width: 100%;
     display: flex;
-    flex: row;
+    flex-direction: row;
     flex-wrap: wrap;
     margin: 2rem 0;
     &--tech {
